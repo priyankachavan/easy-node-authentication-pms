@@ -1,13 +1,19 @@
-<html>
+<html ng-app="pmsApp">
 <head>
-  <link rel="stylesheet" type="text/css" href="./public/login-css.css">
+  <link rel="stylesheet" type="text/css" href="/static/login-css.css">
+  <link rel="stylesheet" type="text/css" href="/src/bootstrap/dist/css/bootstrap.min.css">
   <script type="text/javascript">
     $('.message a').click(function(){
       $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
     });
   </script>
+  <script type="text/javascript" src="/src/angular/angular.min.js"></script>
+  <script type="text/javascript" src="/controllers/mainController.js"></script>
 </head>
-<body>
+<body ng-controller="mainController">
+<div class="header">
+  {{appNames}}
+</div>
 <div class="login-page">
   <div class="form">
     <form class="register-form">
@@ -18,11 +24,12 @@
       <p class="message">Already registered? <a href="#">Sign In</a></p>
     </form>
     <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
-      <input type="password" placeholder="New password"/>
-      <input type="password" placeholder="Confirm New password"/>
-      <button>login</button>
+      <input type="text" placeholder="username" ng-model="CurrentUser.userName"/>
+      <input type="password" placeholder="password" ng-model="CurrentUser.password"/>
+      <input type="password" placeholder="New password" id="newPassword"  />
+      <input type="password" placeholder="Confirm New password" id="confirmNewPassword"/>
+      <button ng-click="OnLogin()">login</button>
+      <p class="message">Not registered? <a href="#">Create an account</a></p>
     </form>
   </div>
 </div>

@@ -1,0 +1,25 @@
+<html ng-app="pmsApp">
+<head>
+  <link rel="stylesheet" type="text/css" href="/static/login-css.css">
+  <link rel="stylesheet" type="text/css" href="/src/bootstrap/dist/css/bootstrap.min.css">
+  <script type="text/javascript">
+    $('.message a').click(function(){
+      $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+    });
+  </script>
+  <script type="text/javascript" src="/src/angular/angular.min.js"></script>
+  <script type="text/javascript" src="/controllers/mainController.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body ng-controller="mainController">
+ <div class="row" style="height: 50px;color:#D3D3D3"></div>
+ <div class="row">
+  <div class="col-lg-4 col-md-4 col-sm-8">
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-8">
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-8">
+  </div>
+ </div>
+</body>
+</html>
