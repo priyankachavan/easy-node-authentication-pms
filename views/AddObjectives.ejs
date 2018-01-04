@@ -1,6 +1,6 @@
 <html ng-app="pmsApp">
 <head>
-  <link rel="stylesheet" type="text/css" href="/static/login-css.css">
+  <link rel="stylesheet" type="text/css" href="/static/objectiveGrid.css">
   <link rel="stylesheet" type="text/css" href="/src/bootstrap/dist/css/bootstrap.min.css">
   <script type="text/javascript">
     $('.message a').click(function(){
@@ -13,13 +13,201 @@
 </head>
 <body ng-controller="mainController">
  <div class="row" style="height: 50px;color:#D3D3D3"></div>
- <div class="row">
-  <div class="col-lg-4 col-md-4 col-sm-8">
+ <div class="container">
+    <hr />
+    <div class="method">
+        <div class="row margin-0 list-header hidden-sm hidden-xs">
+            <div class="col-md-3"><div class="header">Property</div></div>
+            <div class="col-md-2"><div class="header">Type</div></div>
+            <div class="col-md-2"><div class="header">Required</div></div>
+            <div class="col-md-5"><div class="header">Description</div></div>
+        </div>
+
+        <div class="row margin-0">
+            <div class="col-md-3">
+                <div class="cell">
+                    <div class="propertyname">
+                        CurrencyCode  <span class="mobile-isrequired">[Required]</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="cell">
+                    <div class="type">
+                        <code>String</code>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="cell">
+                    <div class="isrequired">
+                        Yes
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="cell">
+                    <div class="description">
+                        The standard ISO 4217 3-letter currency code
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row margin-0">
+            <div class="col-md-3">
+                <div class="cell">
+                    <div class="propertyname">
+                        PriceType  <span class="mobile-isrequired">[Required]</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="cell">
+                    <div class="type">
+                        <code>Int32</code>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="cell">
+                    <div class="isrequired">
+                        Yes
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="cell">
+                    <div class="description">
+                        The type of price
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row margin-0">
+            <div class="col-md-3">
+                <div class="cell">
+                    <div class="propertyname">
+                        WarehouseID  <span class="mobile-isrequired">[Required]</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="cell">
+                    <div class="type">
+                        <code>Int32</code>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="cell">
+                    <div class="isrequired">
+                        Yes
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="cell">
+                    <div class="description">
+                        The unique identifier for the warehouse
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row margin-0">
+            <div class="col-md-3">
+                <div class="cell">
+                    <div class="propertyname">
+                        ItemCodes
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="cell">
+                    <div class="type">
+                        <code>String[]</code>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="cell">
+                    <div class="isrequired">
+                        <span class="text-muted">No</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="cell">
+                    <div class="description">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row margin-0">
+            <div class="col-md-3">
+                <div class="cell">
+                    <div class="propertyname">
+                        LanguageID
+                        <a class="lookuplink" href="javascript:;">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="cell">
+                    <div class="type">
+                        <code>Int32?</code>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="cell">
+                    <div class="isrequired">
+                        <span class="text-muted">No</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="cell">
+                    <div class="description">
+                        The customer's preferred language ID (ex. 0 (English), 1 (Spanish), etc.)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <div class="col-lg-6 col-md-6 col-sm-8">
+ <form class="add-objective">
+    <div class="form-group"> 
+      <label class="mr-sm-2" for="inlineFormCustomSelect">Select Objective Type</label>
+      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+        <option selected>choose</option>
+        <option value="1">Organisational Objectives</option>
+        <option value="2">Core Objective</option>
+      </select>
+    </div>
+   <div class="form-group">
+    <label for="exampleInputEmail1">Objective Name</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Objective Name">
+   </div>
+   <div class="form-group">
+    <label for="exampleSelect1">Weigtage in %</label>
+    <select class="form-control" id="exampleSelect1">
+      <option>10</option>
+      <option>20</option>
+      <option>30</option>
+      <option>40</option>
+      <option>50</option>
+    </select>
   </div>
-  <div class="col-lg-4 col-md-4 col-sm-8">
+   <div class="form-group">
+    <label for="exampleTextarea">Objective Description</label>
+    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
   </div>
-  <div class="col-lg-4 col-md-4 col-sm-8">
-  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
  </div>
 </body>
 </html>

@@ -31,3 +31,8 @@ app.get('/', function(req, res){
 		sess = req.session;
 		res.render(__dirname + '/views/index');
 	});
+
+app.get('/obj', function(req, res){
+		sess = req.session;
+		res.render(__dirname + '/views/AddObjectives');
+	});
